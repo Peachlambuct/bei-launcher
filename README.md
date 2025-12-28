@@ -134,7 +134,7 @@ bei-launcher/
 
 ## 许可证
 
-私有项目
+MIT License
 
 ## 贡献
 
