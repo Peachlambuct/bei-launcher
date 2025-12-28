@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: transparent;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* 确保根节点也是透明的 */
+  background: transparent !important;
+}
+
+/* 只保留最外层的布局容器，负责给窗口留一点 Padding */
+.launcher-window {
+  width: 100vw;
+  height: 100vh;
+  padding: 0px; /* 给窗口边缘留出 12px 的安全距离，防止圆角被系统切掉 */
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+}
+
+/* 隐藏滚动条但保留功能 */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* 修复输入框光标颜色 */
+input {
+    caret-color: #3b82f6; /* blue-500 */
+}
