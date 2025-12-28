@@ -2,6 +2,18 @@
 
 一个轻量级的跨平台桌面启动器，集成了常用开发工具，帮助提升日常工作效率。
 
+## 界面预览
+
+1. 主界面
+   ![主界面](./screenshots/image.png)
+
+2. 上线配置备忘
+![上线配置备忘](./screenshots/deployment-vars.png)
+3. 时间戳转换
+![时间戳转换](./screenshots/timestamp.png)
+4. JSON格式化
+![JSON格式化](./screenshots/json.png)
+
 ## 特性
 
 ### 应用快速启动
