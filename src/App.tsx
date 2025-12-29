@@ -30,25 +30,42 @@ function App() {
       .catch((err) => console.error("Failed to load apps:", err));
   }, []);
 
-  // ... 快捷键逻辑不变 (useEffect x2) ...
   useEffect(() => {
-    const shortcut = "Alt+Space";
+    // 1. 智能判断：Mac 用 Alt+Space，Windows 用 Alt+S
+    const isMac = navigator.userAgent.includes('Mac');
+    console.log("Detected platform:", isMac ? "Mac" : "Windows/Linux");
+    const shortcut = isMac ? "Alt+Space" : "Alt+S"; 
+
     const setupShortcut = async () => {
       try {
-        await unregister(shortcut);
+        await unregister(shortcut).catch(() => {}); 
+
         await register(shortcut, async (event) => {
           if (event.state === "Pressed") {
             const win = getCurrentWindow();
             const isVisible = await win.isVisible();
-            if (isVisible) await win.hide();
-            else { await win.show(); await win.setFocus(); }
+            
+            if (isVisible) {
+              await win.hide();
+            } else {
+              await win.unminimize(); 
+              await win.show();
+              await win.setFocus(); 
+            }
           }
         });
-      } catch (err) { console.error(err); }
+        console.log(`Shortcut ${shortcut} registered successfully!`);
+      } catch (err) {
+        console.error("Shortcut registration failed:", err);
+      }
     };
+
     setupShortcut();
-    return () => { unregister(shortcut); };
-  }, []);
+
+    return () => {
+      unregister(shortcut).catch(() => {}); // 清理时也防止报错
+    };
+}, []);
 
   useEffect(() => {
     const handleEsc = async (e: KeyboardEvent) => {

@@ -20,6 +20,7 @@
     "store:allow-set",
     "store:allow-get-store",
     "store:allow-reset",
-    "store:default"
+    "store:default",
+    "core:window:allow-unminimize"
   ]
 }
