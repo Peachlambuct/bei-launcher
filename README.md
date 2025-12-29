@@ -116,11 +116,11 @@ bei-launcher/
 
 ## 版本信息
 
-当前版本: **v0.1.0** (MVP)
+当前版本: **v0.1.1** (Support Windows)
 
 ## 开发计划
 
-- [ ] 支持更多系统平台 (Windows, Linux)
+- [x] 支持更多系统平台 (Windows, Linux)
 - [ ] 添加更多实用工具插件
 - [ ] 支持自定义主题
 - [ ] 插件热加载

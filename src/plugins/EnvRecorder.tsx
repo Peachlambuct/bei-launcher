@@ -21,7 +21,7 @@ interface EnvItem {
 
 const STORE_PATH = "env_records.json";
 
-export default function EnvRecorder({ onBack }: { onBack: () => void }) {
+export default function EnvRecorder({ onBack: _onBack }: { onBack: () => void }) {
   const [items, setItems] = useState<EnvItem[]>([]);
   const [newItem, setNewItem] = useState({
     key: "",
