@@ -8,7 +8,7 @@ import TimestampTool from "../components/TimestampTool";
 export const plugins: Plugin[] = [
   {
     id: "env-recorder",
-    name: "上线配置备忘 (Deployment Vars)",
+    name: "上线配置备忘录",
     keywords: ["env", "config", "aws", "sqs", "deploy"],
     icon: FaStickyNote,
     component: EnvRecorder,
